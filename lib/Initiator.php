@@ -79,7 +79,7 @@ class Initiator extends \Controller_Addon {
 
         $m = $this->app->top_menu->addMenu('Process and Managemenet');
         $m = $this->app->top_menu->addMenu('Stock And Inventory');
-        $m = $this->app->top_menu->addMenu('Website');
+        $m = $this->app->top_menu->addMenu('Analytics & Reports');
 
         // $hr_menu = $this->app->top_menu->getMenuName('HR',true);
         // $hr_menu->addItem(['Department','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']))

@@ -86,7 +86,7 @@ class Initiator extends \Controller_Addon {
             $m->addItem(['Configuration','icon'=>'fa fa-cog'],'xepan_marketing_socialconfiguration');
         
         $m = $this->app->top_menu->addMenu('Sales Process');
-            $m->addItem(['Prospects Status','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
+            $m->addItem(['Prospects Status','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_prospectstatus'));
             $m->addItem(['Leads','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
 
         $m = $this->app->top_menu->addMenu('Process and Managemenet');

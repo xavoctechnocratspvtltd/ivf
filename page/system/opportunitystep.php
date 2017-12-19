@@ -18,10 +18,9 @@ class page_system_opportunitystep extends \xepan\base\Page{
 				'config_key'=>'OPPORTUNITY_STEP',
 				'application'=>'xavoc\ivf'
 		]);
-		
-		// $config_m->add('xepan\hr\Controller_ACL');
+		$config_m->add('xepan\hr\Controller_ACL');
 		$config_m->tryLoadAny();
-
+		
 		$crud = $this->add('xepan\hr\CRUD',['entity_name'=>'Opportunity Step']);
 		$crud->setModel($config_m);
 		$crud->grid->removeAttachment();

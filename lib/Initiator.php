@@ -48,19 +48,18 @@ class Initiator extends \Controller_Addon {
         $this->app->top_menu->getMenuName('Marketing',true)->destroy();
         $this->app->top_menu->getMenuName('Projects',true)->destroy();
         $this->app->top_menu->getMenuName('Support',true)->destroy();
-        $this->app->top_menu->getMenuName('Epans',true)->destroy();
 
         $m = $this->app->top_menu->addMenu('System');
-            $m->addItem(['Opportunity Steps','icon'=>'fa fa-sliders'],$this->app->url('xepan_commerce_item',['status'=>'Active']));
-
+            $m->addItem(['Opportunity Steps','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_system_opportunitystep',['status'=>'Active']));
+        
         $m = $this->app->top_menu->addMenu('Masters');
             $m->addItem(['Items','icon'=>'fa fa-sliders'],$this->app->url('xepan_commerce_item',['status'=>'Active']));
-            $m->addItem(['Treatments & Procedures','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
-            $m->addItem(['Doctors','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
-            $m->addItem(['Agents','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
-            $m->addItem(['Patients','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
-            $m->addItem(['Doners','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
-            $m->addItem(['Vendors','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
+            $m->addItem(['Treatments & Procedures','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_master_treatment',['status'=>'Active']));
+            $m->addItem(['Doctors','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_master_doctor',['status'=>'Active']));
+            $m->addItem(['Agents','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_master_agent',['status'=>'Active']));
+            $m->addItem(['Patients','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_master_patient',['status'=>'Active']));
+            $m->addItem(['Doners','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_master_doner',['status'=>'Active']));
+            $m->addItem(['Vendors','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_master_vendor',['status'=>'Active']));
 
         $m = $this->app->top_menu->addMenu('HR');
             $m->addItem(['Department','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
@@ -93,4 +92,7 @@ class Initiator extends \Controller_Addon {
         //     ->now();
     }
 
+    function exportEntities($app,&$array){
+        $array['Treatment'] = ['caption'=>'Treatment','type'=>'DropDown','model'=>'xepan\commerce\Model_Treatment'];
+    }        
 }

@@ -13,6 +13,7 @@ class page_system_opportunitystep extends \xepan\base\Page{
 			'fields'=>[
 						'name'=>'Line',
 						'sequence'=>'Number',
+						'is_assign_to_employee'=>'checkbox'
 					],
 				'config_key'=>'OPPORTUNITY_STEP',
 				'application'=>'xavoc\ivf'

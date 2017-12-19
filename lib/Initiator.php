@@ -63,14 +63,27 @@ class Initiator extends \Controller_Addon {
 
         $m = $this->app->top_menu->addMenu('HR');
             $m->addItem(['Department','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
-            $m->addItem(['Post','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
-            $m->addItem(['Employees','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
+            $m->addItem(['Post','icon'=>'fa fa-cog'],$this->app->url('xepan_hr_post',['status'=>'Active']));
+            $m->addItem(['Employees','icon'=>'fa fa-cog'],$this->app->url('xepan_hr_employee',['status'=>'Active']));
+            $m->addItem(['User Login Account','icon'=>'fa fa-cog'],$this->app->url('xepan_hr_user',['status'=>'Active']));
+            $m->addItem(['ACL','icon'=>'fa fa-cog'],$this->app->url('xepan_hr_aclmanagement'));
+            $m->addItem(['Configuration','icon'=>'fa fa-cog'],$this->app->url('xepan_hr_workingweekday',['status'=>'Active']));
 
         $m = $this->app->top_menu->addMenu('Marketing');
-            $m->addItem(['Leads','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
-            $m->addItem(['Newsletter','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
-            $m->addItem(['Tele Calling','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
-            $m->addItem(['NEwsLetter Scheduling','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
+            // $m->addItem(['Strategy Planning','icon'=>'fa fa-gavel'],'xepan_marketing_strategyplanning');
+            $m->addItem(['Category Management','icon'=>'fa fa-sitemap'],'xepan_marketing_marketingcategory');
+            $m->addItem(['Lead','icon'=>'fa fa-users'],$this->app->url('xepan_marketing_lead',['status'=>'Active']));
+            $m->addItem(['Lead Assign','icon'=>'fa fa-users'],$this->app->url('xepan_marketing_employeeleadassign'));
+            $m->addItem(['Opportunity','icon'=>'fa fa-user'],$this->api->url('xepan_marketing_opportunity',['watchable'=>true]));
+            $m->addItem(['Newsletter','icon'=>'fa fa-envelope-o'],$this->app->url('xepan_marketing_newsletter',['status'=>'Draft,Submitted,Approved']));
+            // $m->addItem(['Social Content','icon'=>'fa fa-globe'],$this->app->url('xepan_marketing_socialcontent',['status'=>'Draft,Submitted,Approved']));
+            $m->addItem(['Tele Marketing','icon'=>'fa fa-phone'],'xepan_marketing_telemarketing');
+            $m->addItem(['SMS','icon'=>'fa fa-envelope-square'],$this->app->url('xepan_marketing_sms',['status'=>'Draft,Submitted,Approved']));
+            $m->addItem(['Campaign','icon'=>'fa fa-bullhorn'],$this->app->url('xepan_marketing_campaign',['status'=>'Draft,Submitted,Redesign,Approved,Onhold']));
+            $m->addItem(['Schedule Timeline','icon'=>'fa fa-bullhorn'],$this->app->url('xepan_marketing_scheduletimeline'));
+            $m->addItem(['Day by Day Analytics','icon'=>'fa fa bar-chart-o'],$this->app->url('xepan_marketing_daybydayanalytics'));
+            // $m->addItem(['Reports','icon'=>'fa fa-cog'],'xepan_marketing_report');
+            $m->addItem(['Configuration','icon'=>'fa fa-cog'],'xepan_marketing_socialconfiguration');
         
         $m = $this->app->top_menu->addMenu('Sales Process');
             $m->addItem(['Prospects Status','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));

@@ -14,7 +14,7 @@ class Model_Treatment extends \xepan\base\Model_Document{
 	function init(){
 		parent::init();
 
-		$this->join = $join=$this->join('ivf_treatment.document_id');
+		$this->join = $join = $this->join('ivf_treatment.document_id');
 
 		$join->addField('name')->sortable(true);
 

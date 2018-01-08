@@ -17,6 +17,7 @@ class Model_Procedure extends \xepan\base\Model_Document{
 
 		$join->hasOne('xavoc\ivf\Treatment','treatment_id');
 		$join->addField('name')->sortable(true);
+		$join->addField('amount');
 
 		$this->addCondition('type','Procedure');
 

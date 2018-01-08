@@ -90,9 +90,13 @@ class Initiator extends \Controller_Addon {
             $m->addItem(['Leads','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
 
         $m = $this->app->top_menu->addMenu('Process and Managemenet');
-        $m = $this->app->top_menu->addMenu('Stock And Inventory');
-        $m = $this->app->top_menu->addMenu('Analytics & Reports');
+            $m->addItem(['Patient Procedures','icon'=>'fa fa-users'],$this->app->url('xavoc_ivf_patientprocedure'));
 
+        $m = $this->app->top_menu->addMenu('Stock And Inventory');
+
+        $m = $this->app->top_menu->addMenu('Analytics & Reports');
+            $m->addItem(['Patient Payment Report','icon'=>'fa fa-money'],$this->app->url('xavoc_ivf_report'));
+            
         // $hr_menu = $this->app->top_menu->getMenuName('HR',true);
         // $hr_menu->addItem(['Department','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']))
         //             ;

@@ -17,5 +17,6 @@ class Model_Doctor extends \xepan\base\Model_Contact{
 
 		$this->addCondition('type','Doctor');
 		$this->getElement('status')->defaultValue('Active');
+		
 	}
 }

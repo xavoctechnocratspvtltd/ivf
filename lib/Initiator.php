@@ -51,6 +51,7 @@ class Initiator extends \Controller_Addon {
 
         $m = $this->app->top_menu->addMenu('System');
             $m->addItem(['Opportunity Steps','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_system_opportunitystep',['status'=>'Active']));
+            $m->addItem(['Commerce Configuration','icon'=>'fa fa-sliders'],$this->app->url('xepan_commerce_configurationsidebar',['status'=>'Active']));
         
         $m = $this->app->top_menu->addMenu('Masters');
             $m->addItem(['Items','icon'=>'fa fa-sliders'],$this->app->url('xepan_commerce_item',['status'=>'Active']));
@@ -60,11 +61,21 @@ class Initiator extends \Controller_Addon {
             $m->addItem(['Patients','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_master_patient',['status'=>'Active']));
             $m->addItem(['Doners','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_master_doner',['status'=>'Active']));
             $m->addItem(['Vendors','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_master_vendor',['status'=>'Active']));
+            $m->addItem(['Item Purchase Level Assign ','icon'=>'fa fa-sliders'],$this->app->url('xavoc_ivf_master_itempurchaselevelassign'));
 
         $m = $this->app->top_menu->addMenu('HR');
             $m->addItem(['Department','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']));
             $m->addItem(['Post','icon'=>'fa fa-cog'],$this->app->url('xepan_hr_post',['status'=>'Active']));
             $m->addItem(['Employees','icon'=>'fa fa-cog'],$this->app->url('xepan_hr_employee',['status'=>'Active']));
+            $m->addItem(['Employee Attendance','icon'=>'fa fa-check-square-o'],'xepan_hr_attandance');
+            $m->addItem(['Employee Movement','icon'=>'fa fa-eye'],'xepan_hr_employeemovement');
+            $m->addItem(['Leave Management','icon'=>'fa fa-eye'],'xepan_hr_leavemanagment');
+            $m->addItem(['Reimbursement Management','icon'=>'fa fa-money'],'xepan_hr_reimbursement');
+            $m->addItem(['Deduction Management','icon'=>'fa fa-money'],'xepan_hr_deduction');
+            $m->addItem(['Salary Sheet','icon'=>'fa fa-money'],'xepan_hr_salarysheet');
+
+            $m->addItem(['Affiliate','icon'=>'fa fa-user'],$this->app->url('xepan_hr_affiliate',['status'=>'Active']));
+            $m->addItem(['Deactivate Request','icon'=>'fa fa-user'],'xepan_hr_employee_deactivaterequest');
             $m->addItem(['User Login Account','icon'=>'fa fa-cog'],$this->app->url('xepan_hr_user',['status'=>'Active']));
             $m->addItem(['ACL','icon'=>'fa fa-cog'],$this->app->url('xepan_hr_aclmanagement'));
             $m->addItem(['Configuration','icon'=>'fa fa-cog'],$this->app->url('xepan_hr_workingweekday',['status'=>'Active']));
@@ -91,12 +102,25 @@ class Initiator extends \Controller_Addon {
 
         $m = $this->app->top_menu->addMenu('Process and Managemenet');
             $m->addItem(['Patient Procedures','icon'=>'fa fa-users'],$this->app->url('xavoc_ivf_patientprocedure'));
+            $m->addItem(['Purchase Orders','icon'=>'fa fa-cog'],$this->app->url('xavoc_ivf_purchaseorder'));
+            $m->addItem(['Purchase Invoice','icon'=>'fa fa-cog'],$this->app->url('xavoc_ivf_purchaseinvoice'));
+            $m->addItem(['On Call Doctor','icon'=>'fa fa-cog'],$this->app->url('xavoc_ivf_oncalldoctor'));
 
         $m = $this->app->top_menu->addMenu('Stock And Inventory');
+            $m->addItem(['Warehouse','icon'=>'fa fa-cog'],$this->app->url('xavoc_ivf_warehouse'));
+            $m->addItem(['Material Request','icon'=>'fa fa-cog'],$this->app->url('xavoc_ivf_materialrequest'));
+            $m->addItem(['Store Activity','icon'=>'fa fa-cog'],$this->app->url('xepan_commerce_store_activity_all'));
 
         $m = $this->app->top_menu->addMenu('Analytics & Reports');
-            $m->addItem(['Patient Payment Report','icon'=>'fa fa-money'],$this->app->url('xavoc_ivf_report'));
-            
+            $m->addItem(['Patient Payment Report','icon'=>'fa fa-money'],$this->app->url('xavoc_ivf_report_patientpayment'));
+            $m->addItem(['Daily Cash Flow Report','icon'=>'fa fa-money'],$this->app->url('xavoc_ivf_report_dailycashflow'));
+            $m->addItem(['EDITDA','icon'=>'fa fa-money'],$this->app->url('xavoc_ivf_report_ebitda'));
+            $m->addItem(['Profit to Cash Report','icon'=>'fa fa-money'],$this->app->url('xavoc_ivf_report_profittocash'));
+            $m->addItem(['Revenue Share Calculation Report','icon'=>'fa fa-money'],$this->app->url('xavoc_ivf_report_revenueshare'));
+            $m->addItem(['Stock Report','icon'=>'fa fa-money'],$this->app->url('xepan_commerce_store_item'));
+            $m->addItem(['TDS Calculation','icon'=>'fa fa-money'],$this->app->url('xavoc_ivf_report_tds'));
+            $m->addItem(['GST Calculation','icon'=>'fa fa-money'],$this->app->url('xavoc_ivf_report_gst')); 
+
         // $hr_menu = $this->app->top_menu->getMenuName('HR',true);
         // $hr_menu->addItem(['Department','icon'=>'fa fa-sliders'],$this->app->url('xepan_hr_department',['status'=>'Active']))
         //             ;
